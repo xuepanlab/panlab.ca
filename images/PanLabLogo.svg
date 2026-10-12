@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 390" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">Pan Lab</title>
+  <desc id="logo-desc">Pan Lab — Plant Membranes and Lipid Biology</desc>
+  <defs>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#71934b"/>
+      <stop offset="1" stop-color="#1b504a"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#153c40"/>
+      <stop offset="1" stop-color="#255d5c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Open circular outline: a restrained cue for the cell membrane. -->
+  <path d="M 231 61 A 126 126 0 1 0 246 294" fill="none" stroke="#244d49" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Two simple leaves and a continuous stem. -->
+  <path d="M 149 294 C 149 239 155 182 166 123" fill="none" stroke="#315c4a" stroke-width="7" stroke-linecap="round"/>
+  <path d="M 160 171 C 116 169 69 145 35 103 C 77 91 128 101 153 130 C 167 146 171 158 160 171 Z" fill="url(#leaf)"/>
+  <path d="M 157 166 C 121 151 79 125 45 108" fill="none" stroke="#dbe5c8" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M 153 131 L 105 125 M 143 144 L 91 143 M 127 157 L 75 155" fill="none" stroke="#b7caa1" stroke-width="1.5" stroke-linecap="round" opacity=".85"/>
+  <path d="M 164 128 C 162 78 201 43 265 29 C 257 83 225 125 166 145 Z" fill="url(#leaf)"/>
+  <path d="M 167 137 C 196 99 226 63 260 33" fill="none" stroke="#dbe5c8" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M 191 108 L 187 74 M 213 83 L 216 53 M 231 64 L 246 43" fill="none" stroke="#b7caa1" stroke-width="1.5" stroke-linecap="round" opacity=".85"/>
+
+  <!-- A simplified lipid bilayer, drawn as two gently flowing rows of head groups. -->
+  <path d="M 35 229 C 76 208 106 209 143 227 S 217 249 267 222" fill="none" stroke="#6d9181" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 35 268 C 76 247 106 248 143 266 S 217 288 267 261" fill="none" stroke="#6d9181" stroke-width="3" stroke-linecap="round"/>
+  <g fill="#47796b" stroke="#f9fcf8" stroke-width="1.2">
+    <circle cx="43" cy="225" r="8"/><circle cx="67" cy="216" r="8"/><circle cx="91" cy="216" r="8"/>
+    <circle cx="116" cy="222" r="8"/><circle cx="141" cy="230" r="8"/><circle cx="166" cy="239" r="8"/>
+    <circle cx="191" cy="244" r="8"/><circle cx="216" cy="239" r="8"/><circle cx="241" cy="230" r="8"/><circle cx="263" cy="222" r="8"/>
+  </g>
+  <g fill="#a8bea8" stroke="#f9fcf8" stroke-width="1.2">
+    <circle cx="43" cy="272" r="8"/><circle cx="67" cy="263" r="8"/><circle cx="91" cy="263" r="8"/>
+    <circle cx="116" cy="269" r="8"/><circle cx="141" cy="277" r="8"/><circle cx="166" cy="286" r="8"/>
+    <circle cx="191" cy="291" r="8"/><circle cx="216" cy="286" r="8"/><circle cx="241" cy="277" r="8"/><circle cx="263" cy="265" r="8"/>
+  </g>
+  <g fill="none" stroke="#789b87" stroke-width="2" stroke-linecap="round">
+    <path d="M 59 223 L 65 239 M 67 223 L 73 239 M 83 214 L 89 232 M 91 214 L 97 232 M 108 220 L 114 238 M 116 220 L 122 238 M 133 228 L 139 246 M 141 228 L 147 246 M 158 237 L 164 255 M 166 237 L 172 255 M 183 242 L 189 260 M 191 242 L 197 260 M 208 238 L 214 255 M 216 238 L 222 255 M 233 229 L 239 246 M 241 229 L 247 246"/>
+    <path d="M 59 267 L 65 250 M 67 267 L 73 250 M 83 258 L 89 241 M 91 258 L 97 241 M 108 264 L 114 247 M 116 264 L 122 247 M 133 272 L 139 255 M 141 272 L 147 255 M 158 281 L 164 263 M 166 281 L 172 263 M 183 286 L 189 268 M 191 286 L 197 268 M 208 282 L 214 265 M 216 282 L 222 265 M 233 273 L 239 256 M 241 273 L 247 256"/>
+  </g>
+
+  <!-- Wordmark. The tagline remains editable text and scales crisply with the SVG. -->
+  <path d="M 322 84 L 322 307" fill="none" stroke="#719187" stroke-width="3"/>
+  <text x="377" y="224" fill="url(#teal)" font-family="Arial, Helvetica, sans-serif" font-size="143" letter-spacing="-6">
+    <tspan font-weight="750">Pan</tspan><tspan font-weight="300"> Lab</tspan>
+  </text>
+  <text x="385" y="285" fill="#334b4b" font-family="Arial, Helvetica, sans-serif" font-size="39" font-weight="300" letter-spacing=".6">Plant Membranes and Lipid Biology</text>
+</svg>
