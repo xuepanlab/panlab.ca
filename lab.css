@@ -1,0 +1,131 @@
+body {
+  margin-left: 11px;
+  margin-right: 11px;
+  padding: 3px;
+  max-width: 927px;
+  height: 100%;
+  background-color: #fff;
+  font-family: Arial, Georgia, "Times New Roman", sans-serif, serif;
+  color: #002a5c;
+  text-align: justify;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  overflow: hidden;
+  background-color: #bccbde;
+}
+
+/* style the links inside the navigation bar */
+.topnav a {
+   font-size: 19px;  
+   float: left;
+   color: #002a5c;
+   padding: 13px 16px;
+   text-decoration: none;
+}
+.topnav a:hover {
+  background-color: #fff;
+  color: #002a5c;
+}
+.topnav a.active {
+  background-color: #fff;
+  color: #002a5c;
+}
+
+ .title {
+      cursor: pointer;
+    }
+
+.container {
+      height: auto;
+      display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
+		.left-column {
+			width: 70%;
+      margin-top: 12px;
+      padding: 8px;
+		}
+
+		.right-column {
+			font-size:15px;
+      width: 30%;
+      margin-top: 12px;
+			padding: 10px;
+			background-color: #bccbde;
+     }
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		li {
+			margin-bottom: 6px;
+			cursor: pointer;
+		}
+
+		li:hover {
+			font-weight: bold;
+		}
+
+.selected {
+      background-color: #f2f2f2;
+    }
+
+.recipes{
+  margin-right:16px;
+  font-size:12px;
+}
+.recipe p{
+  font-size: 12px;
+}
+
+#chemicals-table{
+    height:100%;
+}
+#chemicals-table tr:nth-child(even) {
+  background-color: lightgray;
+}
+#chemicals-table tr:hover {
+  background-color: #becadd;
+}
+#chemicals-table td {
+  font-size:11px;
+  word-wrap: break-word;
+  max-width: 310px; /* set a maximum width to limit how wide the cell can get */
+}
+#chemicals-table td:nth-child(2) {
+    padding-left: 22px;
+    padding-right: 6px;
+  }
+#chemicals-table thead {
+    font-weight: bold;
+    border-bottom: 2px solid #0f245b;
+}
+
+.microscope-image {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 555px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin:19px;
+} 
+.microscope-image img {
+      max-width: 100%;
+      max-height: 88px;
+      object-fit: cover;
+      padding: 2px;
+      transition: transform 0.5s;
+      z-index: 1;
+    }
+.microscope-image img:hover {
+      transform: scale(3);
+      z-index: 2;
+    }

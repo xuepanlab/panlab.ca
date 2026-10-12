@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="lab.css">
+  <title>Lab</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Xue Pan">
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+  </script>
+  <script src="lab.js"></script>
+  <script> 
+    $(function(){
+       $("#footer").load("footer.html"); 
+    });
+  </script> 
+</head>
+<body>
+  <div class="header">
+    <a href="http://individual.utoronto.ca/panlab"><img src="images/PanLablogo.png" width="618" alt="utsc_panlab" style="margin-left:13px;"/></a>
+   </div>
+  <div class="topnav">
+  <a href="index.html">PanLab</a>
+  <a href="Publications.html">Publications</a>
+  <a href="Teaching.html">Teaching</a>
+  <a href="People.html">People</a>
+  <a href="Join.html">Join</a>
+  <a class="active" href="Lab.html">Lab</a>
+ </div>
+  <div class="container">
+    <div class="left-column" id="left-column">
+      <div id="default-content">
+        <div class="microscope-image">
+          <img  src="images/others/3dcell.gif">
+          <img  src="images/others/nanodomain.gif">
+          <img  src="images/others/Picture1.jpg">
+          <img  src="images/others/Picture2.jpg">
+          <img  src="images/others/Picture3.jpg">
+          <img  src="images/others/Picture5.jpg">
+          <p>Click Others for more</p>
+        </div>
+      </div> 
+    </div>
+    <div class="right-column">
+      <div>
+        <p><b>Links:</b></p>
+        <ul>
+          <li onclick="loadContent('links/Equipment.html')">Equipment...</li>
+          <li onclick="loadContent('links/Chemicals.html')">Chemicals</li>
+          <li onclick="loadContent('links/Plants-soil-microbes.html')">Plants, soil, microbes...</li>
+          <li onclick="loadContent('links/Biosafety.html')">Biosafety...</li>
+          <li onclick="loadContent('links/Recipes.html')">Solution recipes</li>
+          <li onclick="loadContent('links/Others.html')">Others</li>
+        </ul>
+      </div>
+      <div>
+        <p><b>Protocols:...</b></p>
+        <ul>
+          <li onclick="loadContent('protocols/Western-Blot.html')">Western-Blot...</li>
+          <li onclick="loadContent('protocols/dna.html')">High through put DNA extraction (phenotyping)...</li>
+          <li onclick="loadContent('protocols/Gel-electrophoresis.html')">Gel electrophoresis...</li>
+          <li onclick="loadContent('protocols/TurboID.html')">TurboID in arabidopsis...</li>
+          <li onclick="loadContent('protocols/S-acylation.html')">S-acylation...</li>
+          <li onclick="loadContent('protocols/Partical-tracking.html')">Single partical tracking...</li>
+          <li onclick="loadContent('protocols/Evolutionary-analysis.html')">Evolutionary analysis...</li>
+          <li onclick="loadContent('protocols/Phosphorylation-assay.html')">Phosphorylationassay...</li>
+          <li onclick="loadContent('protocols/Proteomics.html')">Proteomics...</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div id="footer"></div>
+  <hr>
+</body>
+</html>
