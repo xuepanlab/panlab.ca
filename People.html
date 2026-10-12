@@ -1,141 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="PanLab.css">
-  <title>People | Pan Lab</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Xue Pan">
-  <script src="https://code.jquery.com/jquery-3.3.1.js?1645307542"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-  <script>
-    $(function () {
-      $("#footer").load("footer.html");
-    });
-  </script>
+  <meta name="description" content="Meet the researchers and students of the Pan Lab at the University of Toronto Scarborough.">
+  <title>People | Pan Lab</title>
+  <link rel="stylesheet" href="PanLab.css">
 </head>
 <body>
-  <div class="header">
-    <a href="http://individual.utoronto.ca/panlab">
-      <img src="images/PanLablogo.png" width="618" alt="UTSC Pan Lab" style="margin-left:13px;">
-    </a>
-  </div>
-
-  <nav class="topnav">
-    <a href="index.html">PanLab</a>
-    <a href="Publications.html">Publications</a>
-    <a href="Teaching.html">Teaching</a>
-    <a class="active" href="People.html">People</a>
-    <a href="Join.html">Join</a>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Pan Lab home"><img src="images/PanLablogo.png" alt="Pan Lab · University of Toronto Scarborough"></a>
+  <nav class="topnav" aria-label="Main navigation">
+    <a  href="index.html">Home</a>
+    <a  href="Research.html">Research</a>
+    <a class="active" aria-current="page" href="People.html">People</a>
+    <a  href="Lab_News.html">Lab News</a>
+    <a  href="Publications.html">Publications</a>
+    <a  href="Join.html">Join</a>
   </nav>
-
-  <main class="people">
-    <h2>People</h2>
-    <h3>Current Team</h3>
-    <div class="individuals">
-      <div class="individuals" id="individual">
-        <img src="images/people/xuepan23.jpg" alt="Xue Pan">
-        <p><b>Dr. Xue Pan</b><hr></p>
-        <p><b>Assistant Professor</b></p>
-        <p>My research has always centred on plant lipid biology, a path that has taken me from the field to the cell membrane. During my MSc at Dalhousie University, I evaluated the agronomic performance of oilseed crops. For my PhD at the University of Alberta, I turned to what happens inside the seed, studying how flax produces its oil. As an NSERC Postdoctoral Fellow at the University of California, Riverside, I went smaller still, exploring how membrane nanodomains organize signaling in plant cells.</p>
-        <p><a href="mailto:xp.pan@utoronto.ca">xp.pan@utoronto.ca</a><br>
-          <a href="https://www.linkedin.com/in/xuepan/" target="_blank" rel="noopener noreferrer">LinkedIn</a><br>
-          <a href="https://scholar.google.com/citations?hl=en&amp;user=HE_f1KAAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-        </p>
-      </div>
-
-      <div class="individuals" id="individual">
-        <img src="images/people/Mohinur_Khamzaaliyeva23.jpg" alt="Mohinur Khamzaaliyeva">
-        <p><b>Mohinur Khamzaaliyeva</b><hr></p>
-        <p><b>PhD Candidate</b></p>
-        <p><b>Project:</b> Molecular Mechanisms Regulating Temperature- and Shade-Induced Elongation Growth in <i>Arabidopsis</i> and <i>Camelina</i></p>
-        <p><b>Hobbies:</b> Reading, embroidery, swimming, stargazing with my telescope, and writing poetry from time to time.</p>
-      </div>
-
-      <div class="individuals" id="individual">
-        <img src="images/people/punita.jpg" alt="panlab">
-        <p><b>Punita Lalchand</b><hr></p>
-        <p><b>PhD Candidate</b></p>
-        <p><b>Project:</b> Deciphering How Protein Palmitoylation Modulates Plasma Membrane Nanodomains in <i>Arabidopsis</i></p>
-      </div>
-
-      <div class="individuals" id="individual">
-        <img src="images/people/Didier_Ashley23.jpg" alt="Didier Ashley">
-        <p><b>Didier Ashley</b><hr></p>
-        <p><b>MSc Candidate</b></p>
-        <p><b>Project:</b> Biochemical Characterization of Protein Palmitoylation in Auxin Signaling</p>
-        <p><b>Hobbies:</b> Video games, plants, hiking, anime, and manga. I also enjoy learning how different systems in different species and organisms are expressed and how similar the systems are to one another.</p>
-      </div>
-
-      <div class="individuals" id="individual">
-        <img src="images/people/pending.jpg" alt="panlab">
-        <p><b>Richard Yan</b><hr></p>
-        <p><b>MSc Candidate</b></p>
-        <p><b>Project:</b> Mapping the Shade Avoidance Signaling Network in <i>Arabidopsis</i> and <i>Camelina</i> Using TurboID</p>
-      </div>
-
-      <div class="individuals" id="individual">
-        <img src="images/people/pending.jpg" alt="panlab">
-        <p><b>Tiffany Tan</b><hr></p>
-        <p><b>BSc Student (BIOD98)</b></p>
-      </div>
-
-      <div class="individuals" id="individual">
-        <img src="images/people/pending.jpg" alt="panlab">
-        <p><b>Thesya Tan</b><hr></p>
-        <p><b>BSc Student (BIOD98)</b></p>
-      </div>
-
-      <div class="individuals" id="individual">
-        <img src="images/people/pending.jpg" alt="panlab">
-        <p><b>Kichan Ahn</b><hr></p>
-        <p><b>BSc Student (BIOD98)</b></p>
-      </div>
-
-      <div class="individuals" id="individual">
-        <img src="images/people/pending.jpg" alt="panlab">
-        <p><b>Isabella Belasco</b><hr></p>
-        <p><b>BSc Student (BIOB98)</b></p>
-      </div>
-    </div>
-
-    <h3>Alumni</h3>
-    <hr>
-    <div class="individuals">
-      <div class="individuals" id="individual">
-        <img src="images/people/Sophia_Mastrella23.jpg" alt="Sophia Mastrella">
-        <p><b>Sophia Mastrella</b><hr></p>
-        <p>MSc, 2026</p>
-      </div>
-      <div class="individuals" id="individual">
-        <img src="images/people/rob23.jpg" alt="Jianfeng (Robert) Liu">
-        <p><b>Jianfeng (Robert) Liu</b><hr></p>
-        <p>Lab Technician, 2023</p>
-      </div>
-    </div>
-
-    <h3>Undergraduate Students</h3>
-    <hr>
-    <ul>
-      <li>Pin-Chi Hou (BIOB98, BIOD98, 2023)</li>
-      <li>Nadia Tasnim (BIOB98, 2024)</li>
-      <li>Fathima Sumaiya Mohamed Mubarak (BIOB99, 2024)</li>
-      <li>Arthikka Vasudevan (BIOD98, 2024–2025)</li>
-      <li>Viane Paul (BIOB98, 2025)</li>
-      <li>Zahra Sabrin (BIOB98, 2025)</li>
-      <li>Eunice Tang (BIOB98, 2025)</li>
-      <li>Ken Aligiannis (BIOB98, BIOD98, 2025–2026)</li>
-      <li>Iraa Pahil (BIOB98, 2025)</li>
-      <li>Divesh Seerkissoon (BIOB98, 2025)</li>
-      <li>Exmund Asante (BIOB98, NSERC-USRA, 2025–2026)</li>
-      <li>Roxana Sedighi (BIOB98, BIOB99, 2025–2026)</li>
-      <li>Heather Lee (BIOB98, 2026)</li>
-      <li>Jeffrey Wasilishin (BIOB98, 2026)</li>
-    </ul>
-  </main>
-
-  <hr>
-  <div id="footer"></div>
+</header>
+<main class="page-shell">
+  <section class="page-intro"><p class="eyebrow">The people behind the science</p><h1>People</h1><p>Our team brings together plant biology, membrane signaling, lipid biochemistry and quantitative imaging to understand how plants grow and adapt.</p></section>
+  <section class="team-group"><h2>Principal Investigator</h2><div class="team-list">
+    <article class="person-row"><img class="person-photo" src="images/people/xuepan23.jpg" alt="Dr. Xue Pan"><div class="person-info"><h3>Dr. Xue Pan</h3><p class="person-role">Principal Investigator · Assistant Professor</p><p>Research interests: plasma membrane organization, lipid metabolism, protein lipidation and plant responses to environmental change.</p><div class="person-links"><a href="mailto:xp.pan@utoronto.ca">Email</a><a href="https://www.linkedin.com/in/xuepan/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://scholar.google.com/citations?hl=en&amp;user=HE_f1KAAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a><a href="https://www.utsc.utoronto.ca/biosci/xue-pan" target="_blank" rel="noopener noreferrer">UTSC profile ↗</a></div></div></article>
+  </div></section>
+  <section class="team-group"><h2>Graduate Students</h2><div class="team-list">
+    <article class="person-row"><img class="person-photo" src="images/people/Mohinur_Khamzaaliyeva23.jpg" alt="Mohinur Khamzaaliyeva"><div class="person-info"><h3>Mohinur Khamzaaliyeva</h3><p class="person-role">PhD Candidate</p><p>Molecular mechanisms regulating temperature- and shade-induced elongation growth in <i>Arabidopsis</i> and <i>Camelina</i>.</p></div></article>
+    <article class="person-row"><img class="person-photo" src="images/people/pending.jpg" alt="Portrait placeholder for Punita Lalchand"><div class="person-info"><h3>Punita Lalchand</h3><p class="person-role">PhD Candidate</p><p>Deciphering how protein palmitoylation modulates plasma membrane nanodomains in <i>Arabidopsis</i>.</p></div></article>
+    <article class="person-row"><img class="person-photo" src="images/people/Didier_Ashley23.jpg" alt="Didier Ashley"><div class="person-info"><h3>Didier Ashley</h3><p class="person-role">MSc Candidate</p><p>Biochemical characterization of protein palmitoylation in auxin signaling.</p></div></article>
+    <article class="person-row"><img class="person-photo" src="images/people/pending.jpg" alt="Portrait placeholder for Richard Yan"><div class="person-info"><h3>Richard Yan</h3><p class="person-role">MSc Candidate</p><p>Mapping the shade-avoidance signaling network in <i>Arabidopsis</i> and <i>Camelina</i> using TurboID.</p></div></article>
+  </div></section>
+  <section class="team-group"><h2>Undergraduate Researchers</h2><div class="team-list">
+    <article class="person-row"><img class="person-photo" src="images/people/pending.jpg" alt="Portrait placeholder for Tiffany Tan"><div class="person-info"><h3>Tiffany Tan</h3><p class="person-role">BSc Student · BIOD98</p></div></article>
+    <article class="person-row"><img class="person-photo" src="images/people/pending.jpg" alt="Portrait placeholder for Thesya Tan"><div class="person-info"><h3>Thesya Tan</h3><p class="person-role">BSc Student · BIOD98</p></div></article>
+    <article class="person-row"><img class="person-photo" src="images/people/pending.jpg" alt="Portrait placeholder for Kichan Ahn"><div class="person-info"><h3>Kichan Ahn</h3><p class="person-role">BSc Student · BIOD98</p></div></article>
+    <article class="person-row"><img class="person-photo" src="images/people/pending.jpg" alt="Portrait placeholder for Isabella Belasco"><div class="person-info"><h3>Isabella Belasco</h3><p class="person-role">BSc Student · BIOB98</p></div></article>
+  </div></section>
+  <section class="team-group"><h2>Alumni</h2><div class="team-list">
+    <article class="person-row"><img class="person-photo" src="images/people/Sophia_Mastrella23.jpg" alt="Sophia Mastrella"><div class="person-info"><h3>Sophia Mastrella</h3><p class="person-role">MSc · 2026</p></div></article>
+    <article class="person-row"><img class="person-photo" src="images/people/rob23.jpg" alt="Jianfeng (Robert) Liu"><div class="person-info"><h3>Jianfeng (Robert) Liu</h3><p class="person-role">Lab Technician · 2023</p></div></article>
+  </div>
+  <h3 style="margin-top:24px">Previous Undergraduate Researchers</h3>
+  <ul class="alumni-list">
+    <li>Pin-Chi Hou · BIOB98 / BIOD98 (2023)</li><li>Nadia Tasnim · BIOB98 (2024)</li>
+    <li>Fathima Sumaiya Mohamed Mubarak · BIOB99 (2024)</li><li>Arthikka Vasudevan · BIOD98 (2024–2025)</li>
+    <li>Viane Paul · BIOB98 (2025)</li><li>Zahra Sabrin · BIOB98 (2025)</li>
+    <li>Eunice Tang · BIOB98 (2025)</li><li>Ken Aligiannis · BIOB98 / BIOD98 (2025–2026)</li>
+    <li>Iraa Pahil · BIOB98 (2025)</li><li>Divesh Seerkissoon · BIOB98 (2025)</li>
+    <li>Exmund Asante · BIOB98 / NSERC-USRA (2025–2026)</li><li>Roxana Sedighi · BIOB98 / BIOB99 (2025–2026)</li>
+    <li>Heather Lee · BIOB98 (2026)</li><li>Jeffrey Wasilishin · BIOB98 (2026)</li>
+  </ul></section>
+  <p class="publications-note">Please contact us if a profile needs an update. Personal profile links are displayed only when provided and verified.</p>
+</main>
+<footer class="site-footer"><span>© 2026 Pan Lab · University of Toronto Scarborough</span><a href="mailto:xp.pan@utoronto.ca">xp.pan@utoronto.ca</a></footer>
 </body>
 </html>
