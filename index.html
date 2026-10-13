@@ -62,10 +62,10 @@
   const grid = document.getElementById("latest-news-grid");
   if (!grid) return;
 
-  const cleanText = (node) => (node?.textContent || "").replace(/\\s+/g, " ").trim();
+  const cleanText = (node) => (node?.textContent || "").replace(/\s+/g, " ").trim();
   const slugify = (value) => cleanText({ textContent: value })
     .normalize("NFD")
-    .replace(/[\\u0300-\\u036f]/g, "")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "") || "update";
@@ -77,7 +77,7 @@
     return node;
   };
   const dateRank = (value) => {
-    const match = /^(\\d{4})(?:-(\\d{2}))?(?:-(\\d{2}))?$/.exec(value || "");
+    const match = /^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/.exec(value || "");
     if (!match) return 0;
     return Number(match[1]) * 10000 + Number(match[2] || "00") * 100 + Number(match[3] || "00");
   };
