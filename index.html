@@ -39,9 +39,12 @@
   </section>
   <section class="section">
     <div class="section-heading"><div><p class="eyebrow">From the lab</p><h2>Latest news</h2><p>Recent research and updates from the Pan Lab.</p></div><a class="text-link" href="Lab_News.html">All lab news <span aria-hidden="true">↗</span></a></div>
-    <div class="news-grid">
-      <article class="news-card"><a class="news-image" href="https://doi.org/10.1111/nph.71497" target="_blank" rel="noopener noreferrer"><img src="images/home/pathway.jpg" alt="Triacylglycerol biosynthesis schematic"></a><div class="news-card-body"><p class="news-meta"><span>Publication</span><time datetime="2026">2026</time></p><h2><a href="https://doi.org/10.1111/nph.71497" target="_blank" rel="noopener noreferrer">New Phytologist paper explores reciprocal regulation between auxin and DGAT2</a></h2><p>Our study examines how lipid metabolism and auxin signaling interact during high-temperature-induced hypocotyl elongation.</p><a class="text-link" href="Lab_News.html">Read lab news <span aria-hidden="true">↗</span></a></div></article>
+    <div class="news-grid" id="latest-news-grid" aria-live="polite" aria-busy="true">
+      <article class="news-card news-card-auto">
+        <div class="news-card-body"><p>Loading recent lab updates…</p><a class="text-link" href="Lab_News.html">Read lab news <span aria-hidden="true">↗</span></a></div>
+      </article>
     </div>
+    <noscript><p class="news-feed-note">Enable JavaScript to display the latest updates here, or visit <a href="Lab_News.html">Lab News</a>.</p></noscript>
   </section>
   <section class="section">
     <div class="section-heading"><div><p class="eyebrow">Selected work</p><h2>Recent publications</h2></div><a class="text-link" href="Publications.html">All publications <span aria-hidden="true">↗</span></a></div>
@@ -53,5 +56,162 @@
   </section>
 </main>
 <footer class="site-footer"><span>© 2026 Pan Lab · University of Toronto Scarborough</span><a href="mailto:xp.pan@utoronto.ca">xp.pan@utoronto.ca</a></footer>
+
+<script>
+(async function loadLatestLabNews() {
+  const grid = document.getElementById("latest-news-grid");
+  if (!grid) return;
+
+  const cleanText = (node) => (node?.textContent || "").replace(/\\s+/g, " ").trim();
+  const slugify = (value) => cleanText({ textContent: value })
+    .normalize("NFD")
+    .replace(/[\\u0300-\\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "update";
+  const makeTimelineId = (date, title) => "news-" + (date || "undated") + "-" + slugify(title);
+  const make = (tag, className, value) => {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (value !== undefined) node.textContent = value;
+    return node;
+  };
+  const dateRank = (value) => {
+    const match = /^(\\d{4})(?:-(\\d{2}))?(?:-(\\d{2}))?$/.exec(value || "");
+    if (!match) return 0;
+    return Number(match[1]) * 10000 + Number(match[2] || "00") * 100 + Number(match[3] || "00");
+  };
+
+  try {
+    const response = await fetch("Lab_News.html", { cache: "no-cache" });
+    if (!response.ok) throw new Error("Lab News page could not be loaded.");
+    const source = new DOMParser().parseFromString(await response.text(), "text/html");
+    const entries = [];
+    let order = 0;
+
+    const featured = source.querySelector(".news-feature");
+    if (featured) {
+      const copy = featured.querySelector(".news-feature-copy");
+      const heading = copy?.querySelector("h2");
+      const time = copy?.querySelector("time");
+      const panel = featured.querySelector(".news-feature-panel");
+      const description = Array.from(copy?.querySelectorAll("p") || [])
+        .find((p) => !p.classList.contains("news-meta"));
+      if (heading && time) {
+        entries.push({
+          order: order++,
+          date: time.getAttribute("datetime") || "",
+          dateLabel: cleanText(time),
+          category: cleanText(copy.querySelector(".news-meta span")) || "Lab news",
+          title: cleanText(heading),
+          summary: cleanText(description),
+          anchorId: heading.id || makeTimelineId(time.getAttribute("datetime"), cleanText(heading)),
+          featureVisual: panel ? {
+            journal: cleanText(panel.querySelector(".eyebrow")),
+            equation: cleanText(panel.querySelector(".news-feature-equation")),
+            note: cleanText(panel.querySelector("p:last-child"))
+          } : null,
+          image: null,
+          imageAlt: "",
+          directLink: copy.querySelector("a.text-link[href]")?.getAttribute("href") || ""
+        });
+      }
+    }
+
+    source.querySelectorAll(".news-timeline-item").forEach((item) => {
+      const copy = item.querySelector(".news-timeline-copy");
+      const heading = copy?.querySelector("h3");
+      const time = item.querySelector("time.news-timeline-date");
+      if (!heading || !time) return;
+      const image = item.querySelector(".news-timeline-thumb img");
+      const description = Array.from(copy.querySelectorAll("p"))
+        .find((p) => !p.classList.contains("news-timeline-category"));
+      const date = time.getAttribute("datetime") || "";
+      entries.push({
+        order: order++,
+        date,
+        dateLabel: cleanText(time),
+        category: cleanText(copy.querySelector(".news-timeline-category")) || "Lab news",
+        title: cleanText(heading),
+        summary: cleanText(description),
+        anchorId: item.id || makeTimelineId(date, cleanText(heading)),
+        image: image?.getAttribute("src") || null,
+        imageAlt: image?.getAttribute("alt") || "",
+        directLink: ""
+      });
+    });
+
+    entries.sort((a, b) => dateRank(b.date) - dateRank(a.date) || a.order - b.order);
+    const latest = entries.slice(0, 3);
+    if (!latest.length) throw new Error("No news items were found.");
+
+    const fragment = document.createDocumentFragment();
+    latest.forEach((entry) => {
+      const article = make("article", "news-card news-card-auto");
+      const articleUrl = "Lab_News.html#" + encodeURIComponent(entry.anchorId);
+
+      if (entry.image) {
+        const imageLink = make("a", "news-image");
+        imageLink.href = articleUrl;
+        const img = document.createElement("img");
+        img.src = entry.image;
+        img.alt = entry.imageAlt;
+        img.loading = "lazy";
+        imageLink.appendChild(img);
+        article.appendChild(imageLink);
+      } else if (entry.featureVisual) {
+        const visual = make("div", "news-auto-visual news-auto-feature");
+        visual.appendChild(make("p", "eyebrow", entry.featureVisual.journal));
+        visual.appendChild(make("strong", "", entry.featureVisual.equation));
+        visual.appendChild(make("p", "", entry.featureVisual.note));
+        article.appendChild(visual);
+      } else {
+        const visual = make("div", "news-auto-visual news-auto-placeholder");
+        visual.appendChild(make("span", "", entry.category));
+        article.appendChild(visual);
+      }
+
+      const body = make("div", "news-card-body");
+      const meta = make("p", "news-meta");
+      meta.appendChild(make("span", "", entry.category));
+      const time = make("time", "", entry.dateLabel);
+      if (entry.date) time.dateTime = entry.date;
+      meta.appendChild(time);
+      body.appendChild(meta);
+
+      const heading = make("h2");
+      const titleLink = make("a", "", entry.title);
+      titleLink.href = entry.anchorId === "news-dgat2-title" && entry.directLink
+        ? entry.directLink
+        : articleUrl;
+      heading.appendChild(titleLink);
+      body.appendChild(heading);
+
+      if (entry.summary) body.appendChild(make("p", "", entry.summary));
+
+      const readMore = make("a", "text-link", "Read lab news ↗");
+      readMore.href = articleUrl;
+      body.appendChild(readMore);
+      article.appendChild(body);
+      fragment.appendChild(article);
+    });
+
+    grid.replaceChildren(fragment);
+    grid.setAttribute("aria-busy", "false");
+  } catch (error) {
+    grid.replaceChildren();
+    const fallback = make("article", "news-card news-card-auto");
+    const body = make("div", "news-card-body");
+    body.appendChild(make("p", "", "Visit Lab News for the latest research, awards, and lab updates."));
+    const link = make("a", "text-link", "Read lab news ↗");
+    link.href = "Lab_News.html";
+    body.appendChild(link);
+    fallback.appendChild(body);
+    grid.appendChild(fallback);
+    grid.setAttribute("aria-busy", "false");
+  }
+})();
+</script>
+
 </body>
 </html>
