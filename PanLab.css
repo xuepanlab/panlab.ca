@@ -190,3 +190,14 @@ a:focus-visible { outline: 3px solid #d5a84c; outline-offset: 3px; border-radius
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+
+/* People page refinement: compact top spacing and no rule above the PI profile. */
+body.people-page .site-header { border-bottom: 0; }
+body.people-page .page-shell { padding-top: 20px; }
+body.people-page .team-group:first-child { margin-top: 0; }
+body.people-page .team-list-first { border-top: 0 !important; }
+body.people-page .team-list-first .person-row { border-top: 0 !important; }
+@media (max-width: 600px) {
+  body.people-page .page-shell { padding-top: 14px; }
+}
