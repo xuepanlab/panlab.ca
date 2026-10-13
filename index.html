@@ -241,15 +241,11 @@
     const source = new DOMParser().parseFromString(await response.text(), "text/html");
     const sourceCards = Array.from(source.querySelectorAll(".publication-grid .publication-card"));
     const latest = sourceCards.map((card) => {
-      const imageLink = card.querySelector("a.publication-image[href]");
       const titleLink = card.querySelector(".publication-body h2 a[href]");
-      const image = imageLink?.querySelector("img");
       const labels = Array.from(card.querySelectorAll(".publication-body .page-meta span"));
       return {
-        url: titleLink?.getAttribute("href") || imageLink?.getAttribute("href") || "",
+        url: titleLink?.getAttribute("href") || "",
         title: cleanText(titleLink),
-        image: image?.getAttribute("src") || "",
-        imageAlt: image?.getAttribute("alt") || "",
         journal: cleanText(labels[0]),
         year: cleanText(labels[1])
       };
@@ -260,17 +256,6 @@
     const fragment = document.createDocumentFragment();
     latest.forEach((item) => {
       const article = make("article", "publication-card");
-      if (item.image) {
-        const imageLink = make("a", "publication-image");
-        setExternalLink(imageLink, item.url);
-        const image = document.createElement("img");
-        image.src = item.image;
-        image.alt = item.imageAlt || item.title;
-        image.loading = "lazy";
-        imageLink.appendChild(image);
-        article.appendChild(imageLink);
-      }
-
       const body = make("div", "publication-body");
       const heading = make("h2");
       const titleLink = make("a", "", item.title);
