@@ -143,6 +143,12 @@
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "") || "update";
 
+  const featuredHeading = document.querySelector(".news-feature-copy h2");
+  if (featuredHeading && !featuredHeading.id) {
+    const featuredDate = document.querySelector(".news-feature-copy time")?.getAttribute("datetime") || "undated";
+    featuredHeading.id = "news-" + featuredDate + "-" + slugify(featuredHeading.textContent.trim());
+  }
+
   document.querySelectorAll(".news-timeline-item").forEach((item) => {
     if (item.id) return;
     const heading = item.querySelector(".news-timeline-copy h3");
