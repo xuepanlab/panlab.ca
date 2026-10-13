@@ -133,5 +133,26 @@
     <span>© 2026 Pan Lab · University of Toronto Scarborough</span>
     <a href="mailto:xp.pan@utoronto.ca">Contact</a>
   </footer>
+
+<script>
+(function assignNewsTimelineAnchors() {
+  const slugify = (value) => (value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "update";
+
+  document.querySelectorAll(".news-timeline-item").forEach((item) => {
+    if (item.id) return;
+    const heading = item.querySelector(".news-timeline-copy h3");
+    const time = item.querySelector("time.news-timeline-date");
+    if (!heading) return;
+    const date = time?.getAttribute("datetime") || "undated";
+    item.id = "news-" + date + "-" + slugify(heading.textContent.trim());
+  });
+})();
+</script>
+
 </body>
 </html>
