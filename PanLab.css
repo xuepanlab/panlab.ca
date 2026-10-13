@@ -126,7 +126,7 @@ a:focus-visible { outline: 3px solid #d5a84c; outline-offset: 3px; border-radius
 .publication-body h2 { font-size: 1.02rem; }
 .publication-body .page-meta { width: 100%; margin-top: auto; padding-top: 16px; margin-bottom: 0; }
 .publication-body .page-meta span { color: var(--teal-700); font-weight: 700; letter-spacing: normal; text-transform: none; }
-.publications-note { margin: 40px 0 0; padding: 22px 25px; border-radius: 14px; background: var(--sage-100); color: var(--muted); }
+
 .other-contributions { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 25px; }
 .other-contributions h2 { font-size: 1.3rem; }
 .compact-list { margin: 0; padding-left: 22px; color: var(--muted); }
