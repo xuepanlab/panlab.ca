@@ -203,7 +203,7 @@ a:focus-visible { outline: 3px solid #d5a84c; outline-offset: 3px; border-radius
   border-top: 1px solid var(--line); color: var(--muted); font-size: .86rem;
 }
 .site-footer a { font-weight: 700; text-decoration: none; }
-.legacy-lab-content { max-width: var(--max-width); margin: 0 auto; padding: 24px; }
+
 @media (max-width: 900px) {
   .site-header { align-items: flex-start; flex-direction: column; gap: 14px; }
   .topnav { justify-content: flex-start; }
@@ -238,7 +238,6 @@ a:focus-visible { outline: 3px solid #d5a84c; outline-offset: 3px; border-radius
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
 
-
 /* People page refinement: compact top spacing and no rule above the PI profile. */
 body.people-page .page-shell { padding-top: 5px; }
 body.people-page .team-group:first-child { margin-top: 0; }
@@ -247,7 +246,6 @@ body.people-page .team-list-first .person-row { border-top: 0 !important; }
 @media (max-width: 600px) {
   body.people-page .page-shell { padding-top: 4px; }
 }
-
 
 /* Join page: numbered sections, campus imagery, and clear application pathways. */
 body.join-page .page-shell { padding-top: 38px; }
