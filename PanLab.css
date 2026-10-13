@@ -94,6 +94,7 @@ a:focus-visible { outline: 3px solid #d5a84c; outline-offset: 3px; border-radius
 .section-heading p { max-width: 550px; margin: 8px 0 0; color: var(--muted); }
 .text-link { display: inline-flex; gap: 8px; align-items: center; margin-top: 12px; font-weight: 750; text-decoration: none; }
 .focus-grid, .publication-grid, .news-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.focus-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .focus-card, .publication-card, .news-card {
   min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: #fff;
   transition: transform .18s ease, box-shadow .18s ease;
