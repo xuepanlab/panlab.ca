@@ -234,6 +234,16 @@ a:focus-visible { outline: 3px solid #d5a84c; outline-offset: 3px; border-radius
   .alumni-list { grid-template-columns: 1fr; }
   .site-footer { padding: 18px; }
 }
+
+/* Homepage research directions: three desktop cards, responsive on smaller screens. */
+.home-research-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) {
+  .home-research-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .home-research-grid { grid-template-columns: 1fr; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
