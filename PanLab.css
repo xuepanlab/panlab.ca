@@ -54,7 +54,7 @@ a:focus-visible { outline: 3px solid #d5a84c; outline-offset: 3px; border-radius
 .page-shell { max-width: var(--max-width); margin: 0 auto; padding: 54px 28px 72px; }
 .hero {
   display: grid;
-  grid-template-columns: 1.05fr .95fr;
+  grid-template-columns: 1fr;
   min-height: 400px;
   overflow: hidden;
   border-radius: 24px;
@@ -75,9 +75,6 @@ a:focus-visible { outline: 3px solid #d5a84c; outline-offset: 3px; border-radius
 .hero .eyebrow { color: #a9d7cd; }
 .hero h1 { max-width: 680px; margin: 0 0 20px; font-size: clamp(2.25rem, 4vw, 3.75rem); font-weight: 720; letter-spacing: -.04em; line-height: 1.07; }
 .hero-copy p { max-width: 640px; margin: 0 0 22px; color: #e0eeeb; font-size: 1.05rem; }
-.hero-image { min-height: 300px; position: relative; background: #254e50; }
-.hero-image img { width: 100%; height: 100%; min-height: 300px; object-fit: cover; }
-.hero-image::after { position: absolute; inset: 0; content: ""; background: linear-gradient(90deg, rgba(16,56,61,.22), transparent 55%); pointer-events: none; }
 .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
 .button-link {
   display: inline-flex; align-items: center; justify-content: center;
@@ -208,9 +205,6 @@ a:focus-visible { outline: 3px solid #d5a84c; outline-offset: 3px; border-radius
 @media (max-width: 900px) {
   .site-header { align-items: flex-start; flex-direction: column; gap: 14px; }
   .topnav { justify-content: flex-start; }
-  .hero { grid-template-columns: 1fr; }
-  .hero-image { max-height: 310px; }
-  .hero-image img { min-height: 280px; max-height: 310px; }
   .focus-grid, .publication-grid, .news-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 @media (max-width: 600px) {
@@ -223,7 +217,6 @@ a:focus-visible { outline: 3px solid #d5a84c; outline-offset: 3px; border-radius
   .hero { border-radius: 17px; }
   .hero-copy { padding: 30px 24px; }
   .hero h1 { font-size: 2.35rem; }
-  .hero-image, .hero-image img { min-height: 220px; }
   .section { margin-top: 44px; }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 10px; }
   .focus-grid, .publication-grid, .news-grid { grid-template-columns: 1fr; gap: 16px; }
