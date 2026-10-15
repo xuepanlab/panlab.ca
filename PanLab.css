@@ -209,8 +209,8 @@ a:focus-visible { outline: 3px solid #d5a84c; outline-offset: 3px; border-radius
 }
 @media (max-width: 600px) {
   body { font-size: 15px; }
-  .site-header { padding: 14px 18px; }
-  .brand img, .brand svg { max-height: 58px; max-width: 290px; }
+  .site-header { padding: 8px 18px 10px; gap: 7px; }
+  .brand img, .brand svg { max-height: 48px; max-width: 260px; }
   .topnav { gap: 4px; }
   .topnav a { padding: 9px 10px; font-size: .88rem; }
   .page-shell { padding: 30px 18px 48px; }
