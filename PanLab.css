@@ -204,6 +204,7 @@ a:focus-visible { outline: 3px solid #d5a84c; outline-offset: 3px; border-radius
 
 @media (max-width: 900px) {
   .site-header { align-items: flex-start; flex-direction: column; gap: 6px; padding: 10px 22px; }
+  .brand { flex: 0 0 auto; }
   .brand img, .brand svg { max-height: 48px; max-width: 260px; }
   .topnav { justify-content: flex-start; }
   .focus-grid, .publication-grid, .news-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
