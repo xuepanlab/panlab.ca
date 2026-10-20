@@ -54,7 +54,7 @@ a:focus-visible { outline: 3px solid #d5a84c; outline-offset: 3px; border-radius
 .page-shell { max-width: var(--max-width); margin: 0 auto; padding: 54px 28px 72px; }
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  grid-template-columns: 1fr;
   min-height: 400px;
   overflow: hidden;
   border-radius: 24px;
@@ -63,23 +63,6 @@ a:focus-visible { outline: 3px solid #d5a84c; outline-offset: 3px; border-radius
   box-shadow: var(--shadow);
 }
 .hero-copy { align-self: center; padding: clamp(30px, 5vw, 64px); }
-.hero-visual {
-  display: flex;
-  min-width: 0;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(20px, 3vw, 36px);
-  background: var(--teal-950);
-}
-.hero-visual img {
-  display: block;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 320px;
-  border-radius: 14px;
-  object-fit: contain;
-}
 .eyebrow {
   margin: 0 0 12px;
   color: var(--teal-700);
@@ -224,9 +207,6 @@ a:focus-visible { outline: 3px solid #d5a84c; outline-offset: 3px; border-radius
   .brand { flex: 0 0 auto; }
   .brand img, .brand svg { max-height: 48px; max-width: 260px; }
   .topnav { justify-content: flex-start; }
-  .hero { grid-template-columns: 1fr; }
-  .hero-visual { min-height: 0; aspect-ratio: 16 / 9; padding: 18px; }
-  .hero-visual img { min-height: 0; max-height: 260px; }
   .focus-grid, .publication-grid, .news-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 @media (max-width: 600px) {
